@@ -1,0 +1,197 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+body {
+    background-color: #ADD8E6;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}
+
+.Clubheader {
+    background-color: #232E35;
+    padding: 0.5px;
+    ;
+}
+
+
+    .Clubheader .btn-outline-light {
+        border: 2px solid #3498db;
+        color: #3498db;
+        border-radius: 25px;
+        transition: all 0.3s ease-in-out;
+        padding: 10px 20px;
+    }
+
+        .Clubheader .btn-outline-light:hover {
+            background-color: #3498db;
+            color: #ffffff;
+        }
+
+
+    .Clubheader .btn-warning {
+        background-color: cornflowerblue;
+        color: black;
+        border: 2px solid #3498db;
+        border-radius: 25px;
+        transition: all 0.3s ease-in-out;
+        padding: 10px 20px;
+    }
+
+        .Clubheader .btn-warning:hover {
+            background-color: cadetblue;
+            color: #ffffff;
+        }
+
+.custom-link {
+    display: inline-block;
+    padding: 8px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 20px;
+}
+
+    .custom-link:hover {
+        background-color: #0056b3;
+    }
+
+#login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    #login a {
+        color: blue;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 10px;
+    }
+
+        #login a:hover {
+            color: darkblue;
+            text-decoration: underline;
+        }
+
+#signUp a {
+    padding: 10px;
+    color: green;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    top: 60px;
+}
+
+.center-container-s {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    top: 10px;
+}
+
+.login-container {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    background-color: #00063D;
+    color: white;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #005fa3;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #0077cc;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 119, 204, 0.3);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+
+.btn-primary {
+    border-radius: 15px;
+    background-color: darkblue;
+    border-color: white;
+}
+
+.username {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 3em;
+    color: #004080;
+    text-align: center;
+    margin: 20px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+#carouselExampleIndicators {
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

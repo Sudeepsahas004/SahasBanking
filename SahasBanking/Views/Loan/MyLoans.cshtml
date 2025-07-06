@@ -1,0 +1,68 @@
+﻿<style>
+
+   
+    .table-container {
+        width: 40%; 
+        margin: 0 auto; 
+        text-align: center; 
+    }
+
+   
+    table {
+        background-color: aliceblue;
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed; 
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center; 
+        word-wrap: break-word; 
+    }
+
+   .table th {
+        background-color: #000336;
+        color: white;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+
+    
+    .amount-column {
+        width: 50%;
+    }
+
+    .status-column {
+        width: 50%;
+    }
+
+    
+    .button-container {
+        margin-top: 20px; 
+        text-align: center; 
+    }
+
+
+    
+
+</style>
+
+<h1 style="color:darkblue; font-family: Arial, sans-serif; text-align: center; margin-top: 20px;">My Loans</h1>
+<div class="table-container">
+<table class="table">
+    <tr>
+        <th class="amount-column">Amount</th>
+        <th class="status-column">Status</th>
+    </tr>
+    @foreach (var loan in Model)
+    {
+        <tr>
+            <td class="amount-column">@loan.Amount</td>
+            <td class="status-column">@loan.Status</td>
+        </tr>
+    }
+</table>
+<a href="/Account/MainPage" class="btn btn-primary">Back </a>
+</div>

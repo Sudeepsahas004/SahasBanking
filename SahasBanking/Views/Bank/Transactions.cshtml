@@ -1,0 +1,71 @@
+﻿@model IEnumerable<SahasBanking.Models.BankController.Transaction>
+
+<style>
+ 
+    table {
+        background-color: aliceblue;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        color: black;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr:hover {
+        background-color: #ddd;
+    }
+
+    h2 {
+        font-family: Arial, sans-serif;
+        color: #333;
+    }
+</style>
+
+
+
+
+<h2>Transaction Details</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Sender</th>
+            <th>Receiver</th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>Transaction Type</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var transaction in Model)
+        {
+            <tr>
+                
+                <td>
+                        @(string.IsNullOrEmpty(transaction.SenderUsername) ? "Bank" : transaction.SenderUsername)
+                </td>
+                
+                <td>@(string.IsNullOrEmpty(transaction.ReceiverUsername) ? "Bank" : transaction.ReceiverUsername)</td>
+                
+                <td>@transaction.Amount</td>
+                <td>@transaction.Date</td>
+                <td>@transaction.TransactionType</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Account/MainPage" class="btn btn-primary">Back </a>
+

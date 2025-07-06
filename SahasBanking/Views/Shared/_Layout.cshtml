@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SahasBank</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SahasBank.styles.css" asp-append-version="true" />
+</head>   
+<body>
+    <header class="Clubheader">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/sahas_bank_logo.jpg" alt="Logo" width="60" height="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a asp-controller="Home" asp-action="Index" class="nav-link text-white">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-controller="Home" asp-action="Offers" class="nav-link text-white">Offers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-controller="Home" asp-action="CustomerSupport" class="nav-link text-white">Customer Support</a>
+                        </li>
+                        @if (User != null && User.Identity != null && User.Identity.IsAuthenticated)
+                        {
+                            <li>
+                                <div class="text-end">
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <a  asp-controller="Account" asp-action="MainPage" class="nav-link text-white">Admin Portal</a>
+                                    }
+                                    else if (User.IsInRole("User"))
+                                    {
+
+                                        <a asp-controller="Account" asp-action="MainPage" class="nav-link text-white">Banking Hub</a>
+                                
+                                       
+                                    }
+                                </div>
+                            </li>
+                        }
+
+                    </ul>
+                    @if (User != null && User.Identity != null && User.Identity.IsAuthenticated)
+                    {
+
+                        <div class="text-end">
+
+                            <a asp-area="" asp-action="Logout" asp-controller="Account" class="btn btn-outline-light me-2">Logout</a>
+                        </div>
+
+                    }
+                    else
+                    {
+                        <div class="text-end">
+                            <a asp-area="" asp-controller="Account" asp-action="Login" class="btn btn-outline-light me-2">Login</a>
+                            <a asp-area="" asp-action="Register" asp-controller="Account" class="btn btn-warning">Sign-up</a>
+                        </div>
+                    }
+
+
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    @* <footer class="border-top footer text-muted"> *@
+    @*     <div class="container"> *@
+    @*         &copy; 2025 - SahasBank - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> *@
+    @*     </div> *@
+    @* </footer> *@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

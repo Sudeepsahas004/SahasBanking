@@ -1,0 +1,172 @@
+﻿@model SahasBanking.Models.Account.Users;
+
+<style>
+    body {
+        background-color: #ADD8E6; 
+        font-family: Arial, sans-serif; 
+        margin: 0;
+        padding: 0;
+    }
+   
+    .container {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 30px auto;
+        text-align: center;
+    }
+
+    
+    .row {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+ 
+    .card {
+        width: 45%;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: #000336;
+        
+    }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+   
+    .card-body {
+        padding: 20px;
+        
+    }
+
+    .card-title {
+        font-size: 18px;
+        font-weight: bold;
+        color:white;
+        margin-bottom: 15px;
+    }
+
+</style>
+
+@if (User.Identity != null && User != null && User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+{
+    <h1 style="color:darkblue; font-family: Arial, sans-serif; text-align: center; margin-top: 20px;">Hello Admin</h1>
+    <div style="display: flex; justify-content: center; margin-top: 20px;">
+        <a asp-controller="Loan" asp-action="LoanRequests" class="btn btn-primary">
+            Loan Requests
+        </a>
+
+    </div>
+
+}
+
+else{
+<h2 class="username">HELLO @Model.UserName</h2>
+
+
+<div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="~/Curouser_1.jfif" class="d-block w-100 h-20" alt="didntget">
+        </div>
+        <div class="carousel-item">
+            <img src="~/Curouser_2.jfif" class="d-block w-100 h-20" alt="noimage">
+        </div>
+        <div class="carousel-item">
+            <img src="~/Curouser_3.jfif" class="d-block w-100 h-20" alt="noimage">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<br />
+
+    <div class="text-center my-2">
+        <a asp-controller="Bank" asp-action="CheckBalance" asp-route-UserName="@Model.UserName" class="custom-link">Check Your Balance Here</a>
+    </div>
+
+<div class="container">
+
+    <div class="row" >
+     
+        <div class="card">
+            
+                <div class="card-body">
+                    <p class="card-title">Credit Money</p>
+                    <a asp-controller="Bank" asp-action="Credit" asp-route-UserName="@Model.UserName" class="btn btn-primary">Credit</a>
+                </div>
+            </div>
+        
+        <div class="card">
+          
+                <div class="card-body">
+                <p class="card-title">Easy Withdraw </p>
+                    <a asp-controller="Bank" asp-action="Debit" asp-route-UserName="@Model.UserName" class="btn btn-primary"> Withdraw</a>
+                </div>
+            
+        </div>
+    </div>
+
+    <div class="row">
+      
+        <div class="card">
+            <div class="card-body">
+                
+                    <p class="card-title">Send Money</p>
+                    <a asp-controller="Transfer" asp-action="SendTo" class="btn btn-primary">Send</a>
+               
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                
+                    <p class="card-title">Transactions</p>
+                    <a asp-controller="Bank" asp-action="Transactions" asp-route-UserName="@Model.UserName" class="btn btn-primary">History</a>
+                
+            </div>
+        </div>
+    </div>
+
+        <div class="row">
+
+            <div class="card">
+
+                <div class="card-body">
+                    <p class="card-title">Apply Loan</p>
+                    <a asp-controller="Loan" asp-action="Apply" class="btn btn-primary">Apply Loan</a>
+                </div>
+            </div>
+
+            <div class="card">
+
+                <div class="card-body">
+                    <p class="card-title">My Loans </p>
+                    <a asp-controller="Loan" asp-action="MyLoans" class="btn btn-primary"> MyLoans</a>
+                </div>
+
+            </div>
+        </div>
+        @* <div class="text-center my-2"> *@
+        @*     <a asp-controller="Bank" asp-action="CheckBalance" asp-route-UserName="@Model.UserName" class="custom-link">Check Your Balance Here</a> *@
+        @* </div> *@
+    
+</div>
+}

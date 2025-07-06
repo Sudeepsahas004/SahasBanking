@@ -1,0 +1,15 @@
+﻿@model SahasBanking.Models.BankController.BankAccounts;
+<style>
+    .back-button{
+        position:absolute;
+        left:48%;
+    }
+</style>
+<div style="max-width: 400px; margin: 20px auto; padding: 20px; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); text-align: center;">
+    <h1 style="color: #004085; font-size: 24px; margin-bottom: 20px;">Balance</h1>
+    <div style="font-size: 20px; font-weight: bold; color: #28a745;">₹ @Model.AccountBalance</div>
+
+</div>
+<div class="back-button">
+    <a href="/Account/MainPage" class="btn btn-primary">Back</a>
+</div>

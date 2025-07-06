@@ -1,0 +1,23 @@
+﻿@model SahasBanking.Models.Transfer.TransferViewModel
+
+
+<h2 style="text-align: center; color: #003566; font-family: 'Arial', sans-serif; margin: 20px;">Transfer Money</h2>
+
+<div style="max-width: 450px; margin: 0 auto; background-color: #e9f8ff; padding: 20px; border-radius: 12px; box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); font-family: 'Arial', sans-serif;">
+    <form asp-action="TransferMoney" method="post">
+        <div style="margin-bottom: 15px;">
+            <label style="font-weight: bold; color: #495057; font-size: 14px; display: block; margin-bottom: 5px;">Recipient Username:</label>
+            <input type="text" asp-for="ReceiverUsername" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px; box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);" />
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label style="font-weight: bold; color: #495057; font-size: 14px; display: block; margin-bottom: 5px;">Amount:</label>
+            <input type="number" asp-for="Amount" required min="1" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px; box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);" />
+        </div>
+
+        <button type="submit" style="width: 100%; padding: 12px; font-weight: bold; background-color: #007BFF; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease;">
+            Send Money
+        </button>
+    </form>
+
+</div>

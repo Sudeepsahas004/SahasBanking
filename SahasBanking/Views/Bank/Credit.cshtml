@@ -1,0 +1,17 @@
+﻿@model SahasBanking.Models.BankController.BankAccounts;
+
+<h2 style="padding:10px; text-align: center; color: #004085; font-family: 'Arial', sans-serif; margin-bottom: 20px;">Add to Wallet</h2>
+
+<div style="max-width: 450px; margin: 0 auto; background-color: aliceblue; padding: 20px; border-radius: 12px; box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); font-family: 'Arial', sans-serif;">
+    <form asp-controller="Bank" asp-action="Credit" method="post">
+        <input type="hidden" name="Username" value="@Model.UserName" asp-route-UserName="@Model.UserName" />
+        <div class="form-group" style="margin-bottom: 15px;">
+            <label style="font-weight: bold; color: #495057; font-size: 14px; display: block; margin-bottom: 5px;">Amount</label>
+            <input type="number" name="AccountBalance" class="form-control" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px; box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);" />
+        </div>
+        <button type="submit" style="width: 100%; padding: 12px; font-weight: bold; background-color: #007BFF; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease;">
+            Credit
+        </button>
+    </form>
+</div>
+
